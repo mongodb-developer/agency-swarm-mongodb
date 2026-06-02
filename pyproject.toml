@@ -4,14 +4,14 @@ build-backend = "hatchling.build"
 
 [project]
 name = "agency-swarm-mongodb"
-version = "0.1.0"
-description = "MongoDB Atlas-backed thread/session persistence for VRSEN Agency Swarm."
+version = "0.1.1"
+description = "MongoDB Atlas-backed thread/session persistence + semantic/episodic vector memory for VRSEN Agency Swarm."
 readme = "README.md"
 requires-python = ">=3.10"
 license = "MIT"
 license-files = ["LICENSE"]
 authors = [{ name = "MongoDB Developer Relations" }]
-keywords = ["agency-swarm", "mongodb", "atlas", "agent", "persistence", "threads", "session"]
+keywords = ["agency-swarm", "mongodb", "atlas", "agent", "persistence", "threads", "session", "memory", "vector-search", "semantic"]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
