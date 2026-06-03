@@ -42,7 +42,9 @@ jobs:
           path: dist/
 
   publish-testpypi:
-    if: github.event_name == 'push' || github.event.inputs.target == 'testpypi'
+    # Only on manual dry-runs; tag pushes go straight to PyPI (publish-pypi).
+    if: github.event_name == 'workflow_dispatch' && github.event.inputs.target == 'testpypi'
+
     needs: build
     runs-on: ubuntu-latest
     environment: testpypi
