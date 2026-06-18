@@ -1,5 +1,7 @@
 # agency-swarm-mongodb
 
+> ⚠️ **ALPHA — NOT AN OFFICIAL MONGODB PRODUCT.** This integration is in **Alpha** and is **not** a supported or official MongoDB product. **Use at your own risk.**
+
 MongoDB Atlas–backed persistence **and vector memory** for [VRSEN Agency Swarm](https://github.com/VRSEN/agency-swarm).
 
 - **`MongoThreadStore`** — drop-in `load_threads_callback` / `save_threads_callback` for the

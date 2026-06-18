@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "agency-swarm-mongodb"
-version = "0.1.1"
+version = "0.1.2"
 description = "MongoDB Atlas-backed thread/session persistence + semantic/episodic vector memory for VRSEN Agency Swarm."
 readme = "README.md"
 requires-python = ">=3.10"

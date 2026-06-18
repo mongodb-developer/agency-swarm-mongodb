@@ -41,7 +41,7 @@ Example (memory — Atlas Automated Embedding)::
 
 from __future__ import annotations
 
-__version__ = "0.1.1"
+__version__ = "0.1.2"
 
 from .memory import DEFAULT_AUTO_EMBED_MODEL, MongoMemoryStore
 from .store import APP_NAME, DRIVER_NAME, MongoThreadStore
