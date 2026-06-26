@@ -6,7 +6,7 @@ MongoDB Atlas–backed persistence **and vector memory** for [VRSEN Agency Swarm
 
 - **`MongoThreadStore`** — drop-in `load_threads_callback` / `save_threads_callback` for the
   `Agency` class: persist entire conversations to MongoDB and restore them across restarts.
-- **`MongoMemoryStore`** *(new in 0.1.1)* — semantic / episodic long-term memory with Atlas
+- **`MongoMemoryStore`** *(new in 0.1.1)* — semantic / episodic long-term memory with MongoDB
   Vector Search recall. Embedding source-agnostic: **bring your own query vector** (default)
   or enable **Atlas Automated Embedding** (server-side embeddings, no client code).
 
@@ -64,7 +64,7 @@ The store matches the Agency Swarm callback signatures exactly:
 
 ## Vector memory (`MongoMemoryStore`, new in 0.1.1)
 
-Semantic / episodic long-term memory with Atlas Vector Search recall. The package never
+Semantic / episodic long-term memory with MongoDB Vector Search recall. The package never
 calls an embedding provider itself — you choose one of **two first-class paths**:
 
 **1. Bring your own vector (default).** Embed with whatever provider you already use
@@ -112,7 +112,7 @@ into episodic memory from an `Agency`.
 | `connection_string` | — | MongoDB / Atlas URI (required) |
 | `database_name` | `agency_swarm` | Database name |
 | `collection_name` | `memories` | Collection name |
-| `vector_search_index` | `idx_agent_memory` | Atlas Vector Search index name |
+| `vector_search_index` | `idx_agent_memory` | MongoDB Vector Search index name |
 | `auto_embed` | `False` | Enable Atlas Automated Embedding (recall by query text) |
 | `auto_embed_model` | `voyage-4` | Voyage model used by Automated Embedding |
 | `ttl_seconds` | `None` | If set, TTL index on `ts` auto-expires old memories |
@@ -136,7 +136,7 @@ into episodic memory from an `Agency`.
 - **`demo/custom_persistence_mongo.py`** — Mongo-backed mirror of Agency Swarm's
   `custom_persistence.py`: run a turn, simulate a restart, verify recall.
 - **`demo/agent_demo.py`** — a Gemini agent whose threads persist to **Atlas**, plus an
-  **Atlas Vector Search** staffing tool over a team directory (Voyage 3.5 embeddings).
+  **MongoDB Vector Search** staffing tool over a team directory (Voyage 3.5 embeddings).
 - **`demo/memory_demo.py`** — `MongoMemoryStore` semantic + episodic recall on **Atlas**,
   runnable in both modes: bring-your-own Voyage vectors (default) or
   `MEMORY_MODE=auto` for Atlas Automated Embedding.
